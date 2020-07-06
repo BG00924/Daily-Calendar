@@ -14,8 +14,13 @@ Daily Calendar that will allow you to track tasks through the day.
 ## Description
 The Daily Calender allows you to enter task through the day that changes color by the hour allowing you to more efficiently track and complete tasks.
 
+## Credits
+* Google
+* Documentation associated with the above libraries
+* Grant Emerson
+
 ## Website
 https://bg00924.github.io/Daily-Calendar/
 
 ## Overview
-![Planner] (/assets/Images/Daily_Calendar_Preview.jpg)
+![Planner] (/assets/Images/Daily_Calendar_Preview.JPG)
