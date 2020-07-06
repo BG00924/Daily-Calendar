@@ -102,66 +102,51 @@ $(document).ready(function() {
     //End save functions
 })
 
-    //Sets and adds date in the header
-    var currentDate = moment();
-    var display = document.getElementById('currentDay');
-    display.innerHTML = currentDate.format('dddd, MMMM Do');
+//Sets and adds date in the header
+var currentDate = moment();
+var display = document.getElementById('currentDay');
+display.innerHTML = currentDate.format('dddd, MMMM Do');
 
-    //
-    var currentTime = moment().format("dddd MMMM Do YYYY, h:mm a");
-    //Converts the date/time moment output to hours for the loop conditionals
-    var currentTimeInt = moment().hour();
+//
+var currentTime = moment().format("dddd MMMM Do YYYY, h:mm a");
+//Converts the date/time moment output to hours for the loop conditionals
+var currentTimeInt = moment().hour();
 
-    // Sets a specific hour to each text area to allow for a loop to apply styles based on hour
-    $(".row1").attr("data-time", moment("9:00am", "h:mm a").format("HH"));
-    $(".row2").attr("data-time", moment("10:00am", "h:mm a").format("HH"));
-    $(".row3").attr("data-time", moment("11:00am", "h:mm a").format("HH"));
-    $(".row4").attr("data-time", moment("12:00pm", "h:mm a").format("HH"));
-    $(".row5").attr("data-time", moment("1:00pm", "h:mm a").format("HH"));
-    $(".row6").attr("data-time", moment("2:00pm", "h:mm a").format("HH"));
-    $(".row7").attr("data-time", moment("3:00pm", "h:mm a").format("HH"));
-    $(".row8").attr("data-time", moment("4:00pm", "h:mm a").format("HH"));
-    $(".row9").attr("data-time", moment("5:00pm", "h:mm a").format("HH"));
+// Sets a specific hour to each text area to allow for a loop to apply styles based on hour
+$(".row1").attr("data-time", moment("9:00am", "h:mm a").format("HH"));
+$(".row2").attr("data-time", moment("10:00am", "h:mm a").format("HH"));
+$(".row3").attr("data-time", moment("11:00am", "h:mm a").format("HH"));
+$(".row4").attr("data-time", moment("12:00pm", "h:mm a").format("HH"));
+$(".row5").attr("data-time", moment("1:00pm", "h:mm a").format("HH"));
+$(".row6").attr("data-time", moment("2:00pm", "h:mm a").format("HH"));
+$(".row7").attr("data-time", moment("3:00pm", "h:mm a").format("HH"));
+$(".row8").attr("data-time", moment("4:00pm", "h:mm a").format("HH"));
+$(".row9").attr("data-time", moment("5:00pm", "h:mm a").format("HH"));
     
-    // Loop that cycles through and applies styles to each row based on current hour of the day
-    for (var i = 1; i <= 12; i++) {
-        var inputTime = $("." + "row" + i).attr("data-time");
-        var inputTimeInt = parseInt(inputTime);
-        //Applies present class if current time matchs the hour assigned to that textarea
-        if (currentTimeInt === inputTimeInt) {
-            $("." + "row" + i).removeClass("past");
-            $("." + "row" + i).addClass("present");
-            $("." + "row" + i).removeClass("future");
-        }
-        //Applies past class if current time matchs the hour assigned to that textarea
-        if (currentTimeInt > inputTimeInt) {
-            $("." + "row" + i).removeClass("present");
-            $("." + "row" + i).removeClass("future");
-            $("." + "row" + i).addClass("past");
-        }
-        //Applies future class if current time matchs the hour assigned to that textarea
-        if (currentTimeInt < inputTimeInt) {
-            $("." + "row" + i).removeClass("present");
-            $("." + "row" + i).addClass("future");
-            $("." + "row" + i).removeClass("past");
-        }
+// Loop that cycles through and applies styles to each row based on current hour of the day
+for (var i = 1; i <= 12; i++) {
+    var inputTime = $("." + "row" + i).attr("data-time");
+    var inputTimeInt = parseInt(inputTime);
+    //Applies present class if current time matchs the hour assigned to that textarea
+    if (currentTimeInt === inputTimeInt) {
+        $("." + "row" + i).removeClass("past");
+        $("." + "row" + i).addClass("present");
+        $("." + "row" + i).removeClass("future");
     }
+    //Applies past class if current time matchs the hour assigned to that textarea
+    if (currentTimeInt > inputTimeInt) {
+        $("." + "row" + i).removeClass("present");
+        $("." + "row" + i).removeClass("future");
+        $("." + "row" + i).addClass("past");
+    }
+    //Applies future class if current time matchs the hour assigned to that textarea
+    if (currentTimeInt < inputTimeInt) {
+        $("." + "row" + i).removeClass("present");
+        $("." + "row" + i).addClass("future");
+        $("." + "row" + i).removeClass("past");
+    }
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// var auditTask = function() {
-//     var date = moment();
-
-// }
